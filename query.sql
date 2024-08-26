@@ -22,3 +22,4 @@ CREATE TABLE products (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+insert into users (name, email, password, role, is_verified) values ('admin', 'admin@gmail.com', '$2b$10$yU/WkhE18EFXk9D47dwf4.QEW.2AdRV0sWuX.st9yZ2fHy4eLq7fq', 'admin', 1);

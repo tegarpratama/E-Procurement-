@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./back
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./back:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./front
+    ports:
+      - '8000:80'
+    volumes:
+      - ./front:/var/www/html
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: procurement_vhiweb
+    ports:
+      - '3306:3306'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
