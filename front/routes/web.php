@@ -19,7 +19,7 @@ use App\Http\Middleware\TokenJWT;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
