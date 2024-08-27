@@ -22,7 +22,7 @@
 
    - Enter to directory frontend
      `cd .\front`
-    - Create .env file
+   - Create .env file
      `cp .env.example .env`
    - Added value to .env file
      `BACKEND_URL="http://backend:3000/api"`
@@ -33,7 +33,10 @@
 
 4. Running docker compose
 
-   `docker-compose up --build`
+   - Back to root folder
+     `cd ../ `
+   - Run docker compose
+     `docker-compose up --build`
 
 5. Migrate & seed dummy data
 
