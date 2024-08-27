@@ -22,6 +22,8 @@
 
    - Enter to directory frontend
      `cd .\front`
+ - Create .env file
+     `cp .env.example .env`
    - Added value to .env file
      `BACKEND_URL="http://backend:3000/api"`
    - Install composer
