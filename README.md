@@ -29,7 +29,10 @@
    - Generate key
      `php artisan key:generate`
 
-4. Setup database
+4. Running docker compose
+   `docker-compose up --build`
+
+5. Setup database
    - enter to container mysql
      `docker exec -it  e-procurement--mysql-1 bash`
    - login user
@@ -64,7 +67,7 @@
      ```
      insert into users (name, email, password, role, is_verified) values ('admin', 'admin@gmail.com', '$2b$10$yU/WkhE18EFXk9D47dwf4.QEW.2AdRV0sWuX.st9yZ2fHy4eLq7fq', 'admin', 1);
      ```
-5. Test application
+6. Test application
    - open to browser:
      `http://localhost:8000`
    - credentials:
